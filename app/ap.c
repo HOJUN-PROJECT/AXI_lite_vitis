@@ -1,59 +1,45 @@
 #include "ap.h"
 #include "sleep.h"
 
+#include "../driver/btn/btn.h"
+#include "powerind/powerind.h"
+#include "../driver/fnd/fnd.h"
+#include "../driver/btn/btn.h"
+#include "upcounter/upcounter.h"
+
+hLed powerLed;
+hLed upLed;
 hLed downLed;
+hLed togLed;
 
-void ap_main()
-{
+hButton upBtn;
 
+void ap_main(){
+   LED_Init(&powerLed, LED_GPIO, LED_0);
+   LED_Init(&upLed, LED_GPIO, LED_1);
+   LED_Init(&downLed, LED_GPIO, LED_2);
+   LED_Init(&togLed, LED_GPIO, LED_3);
+
+   FND_Init();
+   Button_Init(&upBtn, GPIOC, GPIO_PIN_0);
    initPowerInd();
    initUpCounter();
 
    while(1)
    {
-//      FND_DispNumber(counter++);
-//      counter++;
       dispPowerInd();
-      runUpCounter();
-
+//      runUpCounter();
+      //btnLedOn();
+//      if(Button_getState(&upBtn)==ACT_RELEASED){
+//         LED_Toggle(&powerLed);
+//      }
+      exeUpCounter();
       ISR();
    }
-
 }
-//    while(1)
-//      {
-//         static int init = 0;
-//         if (!init) { counter = 0; init = 1; }
-//
-//
-//         for (int i = 0; i < 1000; i++)
-//         {
-//            FND_DispNumber(counter);
-//
-//            if (i < 250) {
-//               LED_On(&powerLed);
-//               LED_Off(&upLed);
-//               LED_Off(&downLed);
-//            } else if (i < 500) {
-//               LED_Off(&powerLed);
-//               LED_On(&upLed);
-//               LED_Off(&downLed);
-//            } else if (i < 750) {
-//               LED_Off(&powerLed);
-//               LED_Off(&upLed);
-//               LED_On(&downLed);
-//            } else {
-//               LED_Off(&powerLed);
-//               LED_Off(&upLed);
-//               LED_Off(&downLed);
-//            }
-//            usleep(500);
-//         }
-//         counter = (counter + 1) % 10000;
-//      }
-//
 
-void ISR() // Interrupt Service Routine
+
+void ISR()
 {
    millisCounter();
 
@@ -65,10 +51,3 @@ void millisCounter()
    incMillis();
    usleep(1000);
 }
-
-
-
-
-
-
-
