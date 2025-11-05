@@ -4,12 +4,12 @@
 #include "../../device/gpio/gpio.h"
 
 typedef struct{
-   GPIO_TypeDef *gpio_seg;
-   GPIO_TypeDef *gpio_com;
-   int digit_1;
-   int digit_10;
-   int digit_100;
-   int digit_1000;
+	GPIO_TypeDef *gpio_seg;
+	GPIO_TypeDef *gpio_com;
+	int digit_1;
+	int digit_10;
+	int digit_100;
+	int digit_1000;
 }hFnd;
 
 void FND_Init();
