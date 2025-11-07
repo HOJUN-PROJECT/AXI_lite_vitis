@@ -53,3 +53,5 @@ FPGA 내부에서 구현된 실제 논리 회로 또는 외부 디바이스입�
 예: LED 회로, 센서, 통신 모듈, 메모리 인터페이스 등
 
 GPIO나 IP 코어를 통해 MicroBlaze와 직접 연결됩니다.
+
+<img width="653" height="388" alt="image" src="https://github.com/user-attachments/assets/1ea89abf-0cd5-4915-81a4-cd7314292c1b" />
