@@ -1,5 +1,13 @@
+/*
+ * upCounter.h
+ *
+ *  Created on: 2025. 11. 5.
+ *      Author: kccistc
+ */
+
 #ifndef SRC_AP_UPCOUNTER_UPCOUNTER_H_
 #define SRC_AP_UPCOUNTER_UPCOUNTER_H_
+
 #include <stdint.h>
 #include "../../driver/fnd/fnd.h"
 #include "../../driver/led/led.h"
@@ -11,5 +19,5 @@ void runUpCounter();
 void clearUpCounter();
 void exeUpCounter();
 void runDownCounter();
-
+void StopCounter();
 #endif /* SRC_AP_UPCOUNTER_UPCOUNTER_H_ */
