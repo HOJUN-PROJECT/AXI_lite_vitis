@@ -54,7 +54,9 @@ FPGA 내부에서 구현된 실제 논리 회로 또는 외부 디바이스입�
 
 GPIO나 IP 코어를 통해 MicroBlaze와 직접 연결됩니다.
 
+
 <img width="653" height="388" alt="image" src="https://github.com/user-attachments/assets/1ea89abf-0cd5-4915-81a4-cd7314292c1b" 
+
 
   AXI Interface (레지스터 접근 인터페이스)
 → CPU(MicroBlaze 등)가 AXI 버스를 통해 타이머 제어 및 상태를 읽거나 쓰는 영역
